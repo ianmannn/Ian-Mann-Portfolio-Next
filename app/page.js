@@ -216,7 +216,7 @@ export default function Home() {
           </section>
           <section id="skills" className="skills container">
             <h2>
-              <small> About Me</small>
+              <small> About me</small>
               Skills
             </h2>
             <div className="about-holder">
@@ -307,7 +307,7 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Hey Ian, what skills are you best at?" value={messageInput} onChange={e => setMessageInput(e.target.value)} />
-                  <button className="button white">Send</button>
+                  <button className="send-button">Send</button>
                 </form>
               </div>
             </div>
