@@ -4,6 +4,46 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [messageInput, setMessageInput] = useState("");
+
+  const [messages, setMessages] = useState([
+    { role: 'system', content: "How can I help you learn more about Ian and his experience?" },
+  ]);
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+  
+    // Add the user's message to the messages array
+    let newMessages = [...messages, { role: 'user', content: messageInput }];
+    setMessages(newMessages);
+    setMessageInput(''); // Clear input field
+  
+    // Limit conversation history to a manageable number (e.g., the last 5 exchanges)
+    const limitedMessages = newMessages.slice(-6); // Includes last 5 exchanges + system message
+    
+    try {
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: limitedMessages }), // Send only the limited messages
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+  
+      const apiMessage = await response.json();
+      console.log('API Response:', apiMessage); // Log the API response
+  
+      // Add the AI response to the messages array
+      setMessages((prevMessages) => [...prevMessages, { role: 'system', content: apiMessage.message }]);
+    } catch (error) {
+      console.error('Error fetching API:', error);
+      setMessages((prevMessages) => [...prevMessages, { role: 'system', content: 'Error fetching response. Please try again.' }]);
+    }
+  };
+  
+  
 
   useEffect(() => {
     // Dynamically load TagCanvas from the local public directory
@@ -253,30 +293,22 @@ export default function Home() {
               <div className="chat-box">
                 <div className="scroll-area">
                   <ul id="chat-log">
-                    <li>
-                      <span className="avatar bot">AI</span>
-                      <div className="message">
-                        {' '}
-                        Hello, I'm a friendly chatbot that lets you interact
-                        with this portfolio and resume. How can I help you?
-                      </div>
-                    </li>
-                    <li>
-                      <span className="avatar user">User</span>
-                      <div className="message">
-                        {' '}
-                        I have a question to ask you about this resume.
-                      </div>
-                    </li>
+                    {messages.map((message, index) => ( 
+                      <li key={index} className={`${message.role}`}>
+                        <span className={`avatar`}>
+                          {message.role === "user" ? "You" : "AI"}
+                        </span>
+                        <div className="message">{message.content}</div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <div className="chat-message">
+                <form onSubmit={submitForm} className="chat-message">
                   <input
                     type="text"
-                    placeholder="Hey Ian, what skills are you best at?"
-                  />
+                    placeholder="Hey Ian, what skills are you best at?" value={messageInput} onChange={e => setMessageInput(e.target.value)} />
                   <button className="button white">Send</button>
-                </div>
+                </form>
               </div>
             </div>
           </section>
