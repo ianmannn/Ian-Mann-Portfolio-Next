@@ -112,7 +112,11 @@ export default function Home() {
                 <a href="#projects">Projects</a>
               </li>
               <li>
-                <a href="mailto:iancmann99@gmail.com" className="button">
+                <a
+                  href="mailto:iancmann99@gmail.com"
+                  target="_blank"
+                  className="button"
+                >
                   Contact Me
                 </a>
               </li>
@@ -160,11 +164,16 @@ export default function Home() {
                 <div className="call-to-action">
                   <a
                     href="/assets/Ian Mann Resume 1 9_26.pdf"
+                    target="_blank"
                     className="button white"
                   >
                     View Resume
                   </a>
-                  <a href="mailto:iancmann99@gmail.com" className="button">
+                  <a
+                    href="mailto:iancmann99@gmail.com"
+                    target="_blank"
+                    className="button"
+                  >
                     Contact Me
                   </a>
                 </div>
@@ -269,43 +278,69 @@ export default function Home() {
 
                 <ul id="taglist" style={{ display: 'none' }}>
                   <li>
-                    <a href="https://tinyurl.com/3pmr22tm">JAVASCRIPT</a>
+                    <a href="https://tinyurl.com/3pmr22tm" target="_blank">
+                      JAVASCRIPT
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/4h5p9m8t">REACT</a>
+                    <a href="https://tinyurl.com/4h5p9m8t" target="_blank">
+                      REACT
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/4ahfkfaf">NEXT.JS</a>
+                    <a href="https://tinyurl.com/4ahfkfaf" target="_blank">
+                      NEXT.JS
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/yc2fdc7v">AWS</a>
+                    <a href="https://tinyurl.com/yc2fdc7v" target="_blank">
+                      AWS
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/yc44mck2">MONGODB</a>
+                    <a href="https://tinyurl.com/yc44mck2" target="_blank">
+                      MONGODB
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/bdhhyr64">EXPRESS.JS</a>
+                    <a href="https://tinyurl.com/bdhhyr64" target="_blank">
+                      EXPRESS.JS
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/y2b2f85c">HTML</a>
+                    <a href="https://tinyurl.com/y2b2f85c" target="_blank">
+                      HTML
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/4j3asmep">CSS</a>
+                    <a href="https://tinyurl.com/4j3asmep" target="_blank">
+                      CSS
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/4pyp29yc">REDUX</a>
+                    <a href="https://tinyurl.com/4pyp29yc" target="_blank">
+                      REDUX
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/mxv9s5wf">TYPESCRIPT</a>
+                    <a href="https://tinyurl.com/mxv9s5wf" target="_blank">
+                      TYPESCRIPT
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/233kkrw4">SASS</a>
+                    <a href="https://tinyurl.com/233kkrw4" target="_blank">
+                      SASS
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/5n8b2r22">JIRA</a>
+                    <a href="https://tinyurl.com/5n8b2r22" target="_blank">
+                      JIRA
+                    </a>
                   </li>
                   <li>
-                    <a href="https://tinyurl.com/y4ec6h8v">POSTGRESQL</a>
+                    <a href="https://tinyurl.com/y4ec6h8v" target="_blank">
+                      POSTGRESQL
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -331,6 +366,7 @@ export default function Home() {
                 </p>
                 <a
                   href="/assets/Ian Mann Resume 1 9_26.pdf"
+                  target="_blank"
                   className="button white"
                 >
                   Download Resume
