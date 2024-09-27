@@ -1,73 +1,83 @@
-"use client"
+'use client';
 
 import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [messageInput, setMessageInput] = useState("");
+  const [messageInput, setMessageInput] = useState('');
 
   const [messages, setMessages] = useState([
-    { role: 'system', content: "How can I help you learn more about Ian and his experience?" },
+    {
+      role: 'system',
+      content: 'How can I help you learn more about Ian and his experience?',
+    },
   ]);
 
   const submitForm = async (e) => {
     e.preventDefault();
-  
+
     // Add the user's message to the messages array
     let newMessages = [...messages, { role: 'user', content: messageInput }];
     setMessages(newMessages);
     setMessageInput(''); // Clear input field
-  
+
     // Limit conversation history to a manageable number (e.g., the last 5 exchanges)
     const limitedMessages = newMessages.slice(-6); // Includes last 5 exchanges + system message
-    
+
     try {
       const response = await fetch('/api', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: limitedMessages }), // Send only the limited messages
       });
-  
+
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
-  
+
       const apiMessage = await response.json();
       console.log('API Response:', apiMessage); // Log the API response
-  
+
       // Add the AI response to the messages array
-      setMessages((prevMessages) => [...prevMessages, { role: 'system', content: apiMessage.message }]);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: 'system', content: apiMessage.message },
+      ]);
     } catch (error) {
       console.error('Error fetching API:', error);
-      setMessages((prevMessages) => [...prevMessages, { role: 'system', content: 'Error fetching response. Please try again.' }]);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          role: 'system',
+          content: 'Error fetching response. Please try again.',
+        },
+      ]);
     }
   };
-  
-  
 
   useEffect(() => {
     // Dynamically load TagCanvas from the local public directory
     const loadTagCanvas = async () => {
       const script = document.createElement('script');
-      script.src = "/js/tagcanvas.min.js";  // Path to your local file in the public folder
+      script.src = '/js/tagcanvas.min.js'; // Path to your local file in the public folder
       script.onload = () => {
-        if (document.getElementById("tagcanvas")) {
+        if (document.getElementById('tagcanvas')) {
           try {
-            TagCanvas.Start("tagcanvas", "taglist", {
-              textColour: "#11fa11da",
-              outlineColour: "white",
+            TagCanvas.Start('tagcanvas', 'taglist', {
+              textColour: '#11fa11da',
+              outlineColour: 'white',
               reverse: false,
               depth: 0.2,
               maxSpeed: 0.05,
               minSpeed: 0.01,
               initial: [0.1, -0.1],
               weight: true,
-              weightMode: "size",
+              weightMode: 'size',
               wheelZoom: true,
             });
           } catch (e) {
-            console.log("TagCanvas error:", e);
-            document.getElementById("tagcanvas").style.display = "none";
+            console.log('TagCanvas error:', e);
+            document.getElementById('tagcanvas').style.display = 'none';
           }
         }
       };
@@ -91,12 +101,22 @@ export default function Home() {
             <div className="logo-text">Portfolio Website</div>
           </a>
           <nav>
-          <ul id="menu" className={menuOpen ? "menu active" : "menu"}>
-            <li><a href="#">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="mailto:iancmann99@gmail.com" className="button">Contact Me</a></li>
-          </ul>
+            <ul id="menu" className={menuOpen ? 'menu active' : 'menu'}>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="mailto:iancmann99@gmail.com" className="button">
+                  Contact Me
+                </a>
+              </li>
+            </ul>
 
             <a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
               <svg
@@ -243,26 +263,52 @@ export default function Home() {
                 </ul>
               </div>
               <div className="about-right">
-              <canvas id="tagcanvas" width="400" height="400">
-                Your browser does not support the canvas element.
-              </canvas>
+                <canvas id="tagcanvas" width="400" height="400">
+                  Your browser does not support the canvas element.
+                </canvas>
 
-              <ul id="taglist" style={{ display: 'none' }}>
-                <li><a href="#">JAVASCRIPT</a></li>
-                <li><a href="#">REACT</a></li>
-                <li><a href="#">NEXT.JS</a></li>
-                <li><a href="#">AWS</a></li>
-                <li><a href="#">MONGODB</a></li>
-                <li><a href="#">EXPRESS.JS</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">REDUX</a></li>
-                <li><a href="#">TYPESCRIPT</a></li>
-                <li><a href="#">SASS</a></li>
-                <li><a href="#">JIRA</a></li>
-                <li><a href="#">POSTGRESQL</a></li>
-              </ul>
-            </div>
+                <ul id="taglist" style={{ display: 'none' }}>
+                  <li>
+                    <a href="https://tinyurl.com/3pmr22tm">JAVASCRIPT</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/4h5p9m8t">REACT</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/4ahfkfaf">NEXT.JS</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/yc2fdc7v">AWS</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/yc44mck2">MONGODB</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/bdhhyr64">EXPRESS.JS</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/y2b2f85c">HTML</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/4j3asmep">CSS</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/4pyp29yc">REDUX</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/mxv9s5wf">TYPESCRIPT</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/233kkrw4">SASS</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/5n8b2r22">JIRA</a>
+                  </li>
+                  <li>
+                    <a href="https://tinyurl.com/y4ec6h8v">POSTGRESQL</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
           <section className="chatbot container">
@@ -293,10 +339,10 @@ export default function Home() {
               <div className="chat-box">
                 <div className="scroll-area">
                   <ul id="chat-log">
-                    {messages.map((message, index) => ( 
+                    {messages.map((message, index) => (
                       <li key={index} className={`${message.role}`}>
                         <span className={`avatar`}>
-                          {message.role === "user" ? "You" : "AI"}
+                          {message.role === 'user' ? 'You' : 'AI'}
                         </span>
                         <div className="message">{message.content}</div>
                       </li>
@@ -306,7 +352,10 @@ export default function Home() {
                 <form onSubmit={submitForm} className="chat-message">
                   <input
                     type="text"
-                    placeholder="Hey Ian, what skills are you best at?" value={messageInput} onChange={e => setMessageInput(e.target.value)} />
+                    placeholder="Hey Ian, what skills are you best at?"
+                    value={messageInput}
+                    onChange={(e) => setMessageInput(e.target.value)}
+                  />
                   <button className="send-button">Send</button>
                 </form>
               </div>
