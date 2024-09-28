@@ -27,7 +27,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 20px;
-  background-color: #FAFAF9;
+  background-color: #d1d1c7;
 }
 
 a {
@@ -206,7 +206,7 @@ h1 {
   font-size:64px;
   line-height: 1;
   margin-bottom: 10px;
-  color: #e8e8e3;
+  color: #FAFAF9;
   small {
       display: inline;
       font-weight: 300;
@@ -223,8 +223,8 @@ h1 {
   }
   .hero-left{
       color: var(--green-100);
-      border: var(--green-100) 3px solid;
-      box-shadow: #00000049 0px 0px 20px;
+      border: #D1D1D7 15px solid;
+      box-shadow: #00000049 0px 0px 30px;
       flex: 1;
       background-color: #262626;
       border-radius: 30px;
@@ -261,26 +261,29 @@ h1 {
       }
   }
   .hero-right {
-      box-shadow: #0000005e 0px 0px 20px;
+    box-shadow: #00000049 0px 0px 30px;
+      outline: #D1D1D7 15px solid;
       flex: 1;
-      border: #262626 2px solid;
+      /* border: #262626 3px solid; */
       border-radius: 35px;
       padding: 0px 30px;
       display: flex;
       justify-content: center;
-      background-color: #aeae9d;
+      background-color: #8c8c73;
       img {
           border-radius: 30px;
           margin-top: -30px;
           max-width: 460kpx;
           margin-left: -60px;
+          z-index: 1;
       }
 
   }
 }
 
 .logos {
-background-color: #d9d9d9;
+background-color: #666666;
+/* border: #0e0e0c 5px solid; */
 border-radius:30px;
 padding:30px 0px;
 @media (max-width:1440px){
@@ -358,14 +361,15 @@ h3 {
 .skills {
   .about-holder{
       background-color: var(--base-800);
-      border: var(--green-100) 3px solid;
+      box-shadow: #00000049 0px 0px 30px;
+      border: #D1D1D7 20px solid;
       border-radius: 30px;
       padding: 30px;
       display: flex;
       @media(max-width: 1024px) {
           flex-direction: column;
       }
-      .about-left{
+      .about-right{
           flex: 1;
           ul {
             display: flex;
@@ -385,7 +389,7 @@ h3 {
               }
           }
       }
-      .about-right{
+      .about-left{
           flex: 1;
       }
   }
@@ -393,8 +397,9 @@ h3 {
 
 .chatbot {
   .chatbot-main {
-      background-color: var(--base-800);
-      border: var(--green-100) 3px solid;
+      background-color: #262626;
+      box-shadow: #00000049 0px 0px 30px;
+      border: #D1D1D7 15px solid;
       border-radius: 30px;
       padding: 30px;
       gap: 30px;
@@ -441,12 +446,12 @@ h3 {
                           justify-content: flex-end;
                           flex-direction: row-reverse;
                           span {
-                              background-color: var(--yellow-400);
+                              background-color: rgb(0, 26, 255);
                           }
                           margin-right: 10px;
                       }
                       span {
-                          background-color: var(--blue-100);
+                          background-color: rgb(35, 153, 35);
                           width: 64px;
                           height: 64px;
                           border-radius: 50%;

@@ -112,6 +112,9 @@ export default function Home() {
                 <a href="#projects">Projects</a>
               </li>
               <li>
+                <a href="#chatbot">Chat</a>
+              </li>
+              <li>
                 <a
                   href="mailto:iancmann99@gmail.com"
                   target="_blank"
@@ -184,9 +187,9 @@ export default function Home() {
                       width="48px"
                     />
                   </a>
-                  <a href="#">
+                  <a href="https://www.nextlevel-dash.com/" target="_blank">
                     <img
-                      src="/assets/NextLevelTransLogo.png"
+                      src="/assets/nllargelogo.png"
                       alt="NextLevel"
                       width="48px"
                     />
@@ -245,29 +248,7 @@ export default function Home() {
               Skills
             </h2>
             <div className="about-holder">
-              <div className="about-left">
-                <h3>Frontend</h3>
-                <ul>
-                  <li>REACT</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>TYPESCRIPT</li>
-                  <li>NEXT</li>
-                  <li>REDUX</li>
-                  <li>GIT</li>
-                  <li>SASS</li>
-                </ul>
-                <h3>Backend</h3>
-                <ul>
-                  <li>NODE</li>
-                  <li>EXPRESS</li>
-                  <li>SQL & NOSQL</li>
-                  <li>AWS</li>
-                  <li>JIRA</li>
-                  <li>+ MORE</li>
-                </ul>
-              </div>
-              <div className="about-right">
+            <div className="about-left">
                 <canvas id="tagcanvas" width="400" height="400">
                   Your browser does not support the canvas element.
                 </canvas>
@@ -340,16 +321,38 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+              <div className="about-right">
+                <h3>Frontend</h3>
+                <ul>
+                  <li>REACT</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>TYPESCRIPT</li>
+                  <li>NEXT</li>
+                  <li>REDUX</li>
+                  <li>GIT</li>
+                  <li>SASS</li>
+                </ul>
+                <h3>Backend</h3>
+                <ul>
+                  <li>NODE</li>
+                  <li>EXPRESS</li>
+                  <li>SQL & NOSQL</li>
+                  <li>AWS</li>
+                  <li>JIRA</li>
+                  <li>+ MORE</li>
+                </ul>
+              </div>
             </div>
           </section>
-          <section className="chatbot container">
+          <section id="chatbot" className="chatbot container">
             <h2>
               <small> Talk to me </small>
               Chatbot
             </h2>
             <div className="chatbot-main">
               <div className="chat-info">
-                <h3>Azure AI Chatbot</h3>
+                <h3> Ask Away</h3>
                 <p>
                   I've create a chatbot which knows all about my skills and
                   experience. It also has a copy of my CV/Resume. You can use it
