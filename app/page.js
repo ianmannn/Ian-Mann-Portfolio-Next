@@ -66,7 +66,7 @@ export default function Home() {
             TagCanvas.Start('tagcanvas', 'taglist', {
               textColour: '#11fa11da',
               outlineColour: 'white',
-              reverse: false,
+              reverse: true,
               depth: 0.2,
               maxSpeed: 0.05,
               minSpeed: 0.01,
@@ -154,12 +154,8 @@ export default function Home() {
                   A passionate full-stack developer with a knack for visualizing
                   and creating interactive websites and applications. I thrive
                   in dynamic environments where innovation and creativity are
-                  key.
-                  <span>
-                    Additionally I am always looking to grow my developer
-                    knowledge and aim to learn as much as possible about
-                    technologies such as machine learning and neural networks.
-                  </span>
+                  key. Additionally I am always looking to grow my developer knowledge and aim to learn as much as possible about 
+                  technologies such as machine learning and neural networks.
                 </p>
                 <div className="call-to-action">
                   <a
@@ -178,12 +174,12 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="social-links">
-                  <a href="#">
-                    <img src="/assets/github.png" alt="GitHub" width="48px" />
+                  <a href="https://github.com/ianmannn" target="_blank">
+                    <img src="/assets/githubwhite.png" alt="GitHub" width="48px" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/iancmann99/" target="_blank">
                     <img
-                      src="/assets/linkedin.png"
+                      src="/assets/linkedinwhite.png"
                       alt="LinkedIn"
                       width="48px"
                     />
