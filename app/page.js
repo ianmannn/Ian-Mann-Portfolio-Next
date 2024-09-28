@@ -115,9 +115,9 @@ export default function Home() {
                 <a
                   href="mailto:iancmann99@gmail.com"
                   target="_blank"
-                  className="button"
+                  className="button header"
                 >
-                  Contact Me
+                  Let's Talk
                 </a>
               </li>
             </ul>

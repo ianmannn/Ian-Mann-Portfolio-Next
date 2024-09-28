@@ -152,7 +152,7 @@ header {
 .button {
     display: inline-block;
     padding: 10px 30px;
-    background-color: var(--base-800);
+    /* background-color: FAFAF9; */
     color: var(--blue-200);
     border-radius: 10px;
     border: var(--blue-200) 2px solid; /* Keep a permanent transparent border */
@@ -165,10 +165,26 @@ header {
       border-color: var(--blue-200); /* Change only border color on hover */
     }
   }
-  
+
+.button.header{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--blue-200);
+    color: var(--base-800);
+    border-radius: 10px;
+    border: var(--blue-100) 2px solid; /* Keep a permanent transparent border */
+    box-sizing: border-box; /* Ensures padding and border don't affect button size */
+    transition: ease 0.3s all; /* Smooth transition for all properties */
+    &:hover {
+      text-decoration: none;
+      background-color: #FAFAF9;
+      color: var var(--blue-200);
+      border-color: var(--blue-200); /* Change only border color on hover */
+    }
+}
 .button.white {
     border: 2px solid var(--base-100);
-    background-color: var(--base-800);
+    /* background-color: var(--base-800); */
     color: var(--base-100);
     &:hover {
       background-color: var(--base-100);
@@ -177,7 +193,7 @@ header {
   }
   
 .button.black {
-    background-color: black;
+    /* background-color: black; */
     color: white;
     border: 2px solid transparent;
     &:hover {
