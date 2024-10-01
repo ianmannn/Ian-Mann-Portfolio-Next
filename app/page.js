@@ -220,7 +220,7 @@ export default function Home() {
             </div>
             <div className="hero-right">
               <img
-                src="/assets/linkprofpic4cut.PNG"
+                src="../public/assets/linkprofpic4cut.png"
                 alt="Ian Mann"
                 width="100%"
                 height="80%"
