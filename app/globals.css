@@ -283,7 +283,7 @@ h1 {
     justify-content: center;
     span {
       @media (max-width: 1024px) {
-        font-size: 35px
+        font-size: 30px
       }
     }
     .call-to-action {
@@ -462,6 +462,10 @@ h3 {
           flex-direction: column;
           justify-content: flex-end;
           gap: 15px;
+
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
           li {
             display: flex;
             align-items: center;
@@ -508,6 +512,13 @@ h3 {
           background-color: var(--base-800);
           color: var(--green-100);
           border: var(--green-100) 2px solid;
+        }
+
+        @media (max-width: 768px) {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
       .chat-message {
