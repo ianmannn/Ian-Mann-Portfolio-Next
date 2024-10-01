@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [messageInput, setMessageInput] = useState('');
+  const [paragraphVisible, setParagraphVisible] = useState(false);
+  const [typingFinished, setTypingFinished] = useState(false);
 
   const [messages, setMessages] = useState([
     {
@@ -86,12 +88,27 @@ export default function Home() {
 
     // Load the TagCanvas script once the component is mounted
     loadTagCanvas();
+
+    // Set a timer to show the paragraph after the typing animation completes
+    const timer = setTimeout(() => {
+      setParagraphVisible(true);
+    }, 3500); // Set delay time to match the typing animation duration
+
+    return () => clearTimeout(timer); // Clean up the timer when the component unmounts
+  }, []);
+
+  useEffect(() => {
+    // Set a timer to show the paragraph and remove caret after typing finishes
+    const typingDuration = 3500; // Duration of the typing animation
+    setTimeout(() => {
+      setParagraphVisible(true); // Show paragraph after typing finishes
+      setTypingFinished(true); // Mark typing as finished to remove caret
+    }, typingDuration);
   }, []);
 
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
   return (
     <>
       <body>
@@ -146,14 +163,18 @@ export default function Home() {
           </nav>
         </header>
         <main>
-          <section className="hero container">
+        <section className="hero container">
             <div className="hero-left">
               <div>
+                {/* Typing effect */}
                 <h1>
-                  <small>Hello I'm </small>
-                  Ian Mann
+                <span className={`typing ${typingFinished ? 'finished' : ''}`}>
+                    <small>Hello I'm </small> Ian Mann
+                  </span>
                 </h1>
-                <p>
+
+                {/* Paragraph that appears after typing finishes */}
+                <p className={paragraphVisible ? 'visible' : 'hidden'}>
                   A passionate full-stack developer with a knack for visualizing
                   and creating interactive websites and applications. I thrive
                   in dynamic environments where innovation and creativity are
