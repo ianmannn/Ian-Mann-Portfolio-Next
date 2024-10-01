@@ -18,6 +18,9 @@ const systemMessage = `
   Ian also has worked in various team settings with other skilled software engineers. 
   Make sure to mention that Ian is a quick learner and is always eager to learn new technologies.
   If asked your goal and purpose is to teach the user about Ian.
+  Make sure to also keep in kind that Ian has not worked at any companies. The software engineering positions are for open source projects which were not paid but
+  were extremely useful in gaining experience working as an engineer and with a team. Add other useful information for employers that might help deal with the fact that 
+  Ian does not have any professional experience. Don't mention this fact directly but try to make it seem like Ian has experience.
   Below is Ian's resume information:
 
   
@@ -69,52 +72,57 @@ const systemMessage = `
   Hobbies: Skiing, Waterskiing, Sailing, Hiking, Gyming, Meal Prepping, Violin, Chess, Video Creation
   Interests: Guitar, DJing, Music Creation, Neural Networks/Machine Learning, Rental Arbitrage`;
 
-  export async function POST(req) {
-    try {
-      const { message } = await req.json();
-  
-      const messages = [
-        { role: 'system', content: systemMessage }, // Always start with the system message
-        ...message,
-      ];
-  
-      const url = `${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`;
-  
-      let attempts = 0;
-      let success = false;
-      let data;
-  
-      // Retry mechanism in case of failure
-      while (attempts < 3 && !success) {
-        attempts++;
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'api-key': apiKey,
-          },
-          body: JSON.stringify({
-            messages: messages,
-            max_tokens: 150,
-          }),
-        });
-  
-        data = await response.json();
-  
-        if (response.ok) {
-          success = true;
-        } else {
-          console.error(`Attempt ${attempts} failed: ${data.error.message}`);
-          if (attempts === 3) {
-            return NextResponse.json({ error: `Error: ${data.error.message}` }, { status: 500 });
-          }
+export async function POST(req) {
+  try {
+    const { message } = await req.json();
+
+    const messages = [
+      { role: 'system', content: systemMessage }, // Always start with the system message
+      ...message,
+    ];
+
+    const url = `${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`;
+
+    let attempts = 0;
+    let success = false;
+    let data;
+
+    // Retry mechanism in case of failure
+    while (attempts < 3 && !success) {
+      attempts++;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': apiKey,
+        },
+        body: JSON.stringify({
+          messages: messages,
+          max_tokens: 150,
+        }),
+      });
+
+      data = await response.json();
+
+      if (response.ok) {
+        success = true;
+      } else {
+        console.error(`Attempt ${attempts} failed: ${data.error.message}`);
+        if (attempts === 3) {
+          return NextResponse.json(
+            { error: `Error: ${data.error.message}` },
+            { status: 500 }
+          );
         }
       }
-  
-      return NextResponse.json({ message: data.choices[0].message.content });
-    } catch (error) {
-      console.error('Error occurred:', error);
-      return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
     }
+
+    return NextResponse.json({ message: data.choices[0].message.content });
+  } catch (error) {
+    console.error('Error occurred:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
   }
-  
+}
