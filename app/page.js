@@ -375,7 +375,7 @@ export default function Home() {
               <div className="chat-info">
                 <h3> Ask Away</h3>
                 <p>
-                  I've create a chatbot which knows all about my skills and
+                  I've created a chatbot which knows all about my skills and
                   experience. It also has a copy of my CV/Resume. You can use it
                   to ask questions about me to getter a better idea of who I am
                   and what I've done!
