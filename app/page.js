@@ -118,7 +118,7 @@ export default function Home() {
             <div className="logo-text">Portfolio Website</div>
           </a>
           <nav>
-            <ul id="menu" className={menuOpen ? 'menu active' : 'menu'}>
+            <ul id="menu" className={menuOpen ? 'active' : ''}>
               <li>
                 <a href="#">Home</a>
               </li>
