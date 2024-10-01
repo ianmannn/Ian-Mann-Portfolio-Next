@@ -21,7 +21,7 @@ const systemMessage = `
   Make sure to also keep in kind that Ian has not worked at any companies. The software engineering positions are for open source projects which were not paid but
   were extremely useful in gaining experience working as an engineer and with a team. Add other useful information for employers that might help deal with the fact that 
   Ian does not have any professional experience. Don't mention that he has not worked at any companies directly unless asked specifically if he has worked at any companies has but try to make it seem like Ian has experience.
-  Try to keep responses to a maximum of 150 tokens and make sure to keep the responses concise and to the point.
+  Try to keep responses to a maximum of 100 words and make sure to keep the responses concise and to the point.
   Below is Ian's resume information:
 
   

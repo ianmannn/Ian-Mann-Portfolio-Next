@@ -181,6 +181,21 @@ nav {
   }
 }
 
+.button.header {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgb(5, 5, 5);
+  color: var(--base-100);
+  border-color: rgb(5, 5, 5);
+  border-radius: 30px;
+  transition: ease 0.3s all;
+  &:hover {
+    text-decoration: none;
+    color: var(--blue-200);
+    border: var(--blue-200) 2px solid;
+  }
+}
+
 .button.white {
   border: 2px solid var(--base-100);
   color: var(--base-100);
