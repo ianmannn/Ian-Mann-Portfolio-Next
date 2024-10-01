@@ -97,9 +97,9 @@ header {
   font-weight: 600;
   color: #0e0e0c;
   .logo {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-self: center;
+    justify-content: center;
     font-size: 32px;
     background-color: #0e0e0c;
     color: #f2f2f2;
