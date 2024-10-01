@@ -283,7 +283,7 @@ h1 {
     justify-content: center;
     span {
       @media (max-width: 1024px) {
-        font-size: 27px
+        font-size: 25px
       }
     }
     .call-to-action {
