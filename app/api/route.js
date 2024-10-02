@@ -38,7 +38,7 @@ const systemMessage = `
   Languages & Frameworks: JavaScript (ES6+), React, Node.js, Express, SQL (PostgreSQL), NoSQL (MongoDB, Supabase), TypeScript
   DevOps & Tools: AWS (RDS, DynamoDB, S3), Docker, CI/CD (Vercel), OAuth, JWT/BCrypt, Git/GitHub Flow, Webpack, Next.js, Redux, React Router
   Testing & Visualization: Jest, Chart.js, Tensorflow.js
-  Additional Skills: C++, HTML, CSS (Sass), Jira, WordPress, Final Cut Pro
+  Additional Skills: C++, HTML, Azure, CSS (Sass), Jira, WordPress, Final Cut Pro
 
   Experience:
   Software Engineer - NextLevel(Open Source) (June 2024 - Present)
