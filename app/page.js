@@ -408,7 +408,7 @@ export default function Home() {
                 <form onSubmit={submitForm} className="chat-message">
                   <input
                     type="text"
-                    placeholder="Hey Ian, what skills are you best at?"
+                    placeholder="What can Ian offer my company?"
                     value={messageInput}
                     onChange={(e) => setMessageInput(e.target.value)}
                   />
