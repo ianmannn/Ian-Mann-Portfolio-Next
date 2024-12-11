@@ -366,6 +366,8 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <section id="projects" className="projects container">
+          </section>
           <section id="chatbot" className="chatbot container">
             <h2>
               <small> Talk to me </small>
