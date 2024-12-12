@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
+const projects = [
+  {name: "NextLevel", description: "A metric tracking dashboard for Next.js apps", link: "https://www.nextlevel-dash.com/", image: "/assets/nllargelogo.png"},
+  {name: "LunchBox", description: "A meal prep planner and tracker", link: "https://github.com/GoblinShark48/LunchBox", image: "/assets/lunchboxlogo.png"},
+  {name: "Midas", description: "Custom website design", link: "NA", image: "/assets/midasprelogo.png"},
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [messageInput, setMessageInput] = useState('');
@@ -367,6 +373,19 @@ export default function Home() {
             </div>
           </section>
           <section id="projects" className="projects container">
+            <h2> Projects</h2>
+            <div className="project-holder">
+              {projects.map((project, index) => (
+                <div key={index} className="project">
+                  <img className="product-image" src={project.image} alt={project.name} />
+                  <h3>{project.name}</h3>
+                  <p className="proj-desc">{project.description}</p>
+                  <a href={project.link} target="_blank" className="button">
+                    View Project
+                  </a>
+                </div>
+              ))}
+            </div>
           </section>
           <section id="chatbot" className="chatbot container">
             <h2>

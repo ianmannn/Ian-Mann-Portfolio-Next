@@ -593,3 +593,33 @@ h3 {
     }
   }
 }
+
+.project-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  .project{
+    background-color: var(--base-800);
+    box-shadow: #00000049 0px 0px 30px;
+    outline: #b9b9bd 15px solid;
+    border: #d1d1d7 20px solid;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 400px;
+    .product-image {
+      width: 50%;
+      border-radius: 30px;
+    }
+    .proj-desc{
+      color: var(--green-100);
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}
