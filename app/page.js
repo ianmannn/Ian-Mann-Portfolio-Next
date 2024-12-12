@@ -189,7 +189,7 @@ export default function Home() {
                 </p>
                 <div className="call-to-action">
                   <a
-                    href="/assets/Ian Mann Resume 1 10_1.pdf"
+                    href="/assets/Resume.pdf"
                     target="_blank"
                     className="button white"
                   >
@@ -406,7 +406,7 @@ export default function Home() {
                   you are interested and want to take a look.
                 </p>
                 <a
-                  href="/assets/Ian Mann Resume 1 10_1.pdf"
+                  href="/assets/Resume.pdf"
                   target="_blank"
                   className="button white"
                 >
