@@ -18,7 +18,7 @@ const projects = [
   {
     name: 'Midas',
     description: 'Custom website design business',
-    link: 'NA',
+    link: 'https://www.figma.com/proto/mnU19dm0kaadTFLrGO9kHj/The-Midas-Website?node-id=31-1060&starting-point-node-id=31%3A1060&t=BF7KTFzGpim6Xclj-1',
     image: '/assets/midasprelogo.png',
   },
 ];
