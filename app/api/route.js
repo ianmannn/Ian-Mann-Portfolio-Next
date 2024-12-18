@@ -56,6 +56,15 @@ const systemMessage = `
     - Optimized the build process using Webpack within Next.js, implementing custom CORS headers for enhanced API compatibility and experimental instrumentation hooks for advanced performance monitoring and actionable insights
 
 
+  Marketing Intern - EGA Homes - Real Estate for Veterans (Jan 2023 - June 2023)                                                           
+    - Collaborated with a team of interns in planning and designing a front-end website, creating interactive prototypes in Figma to visualize user flows and align design elements with project goals and specific client interaction
+    - Created and continually customized a website using WordPress, applying HTML and CSS to enhance layout and design, and ensuring a responsive and user-friendly experience across devices
+
+  Marketing Assistant - MG3 Media - Real Estate Marketing (Feb 2022 - June 2024)
+    - Developed and implemented a data-driven social media marketing campaign using API analytics and basic scripting (Jupyter + Pandas) to automate data collection, track engagement benchmarks, and optimize posting schedules, successfully enhancing user engagement by 410%
+
+  Projects:
+
   Software Engineer - Job Hub (July 2024)
   Used Redux for state management in a job application tracker.
   Wrote unit and integration tests with Jest to ensure code reliability.
