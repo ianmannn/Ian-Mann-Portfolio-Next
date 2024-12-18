@@ -285,6 +285,9 @@ h1 {
       @media (max-width: 1024px) {
         font-size: 25px
       }
+      @media (max-width: 1440px) {
+        font-size: 40px
+      }
     }
     .call-to-action {
       margin-top: 20px;
@@ -598,6 +601,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
+  justify-content: center;
   .project{
     background-color: var(--base-800);
     box-shadow: #00000049 0px 0px 30px;
@@ -611,15 +615,24 @@ h3 {
     gap: 30px;
     margin-bottom: 30px;
     width: 400px;
+    @media (max-width: 1440px) {
+      width: 40% to 50%;
+    }
+    @media (max-width: 1024px) {
+      width: 40% to 50%;
+    }
+
+    @media (max-width: 728px) {
+      flex-direction: column;
+      
+      width: 80%;
+    }
     .product-image {
       width: 50%;
       border-radius: 30px;
     }
     .proj-desc{
       color: var(--green-100);
-    }
-    @media (max-width: 1024px) {
-      flex-direction: column;
     }
   }
 }
