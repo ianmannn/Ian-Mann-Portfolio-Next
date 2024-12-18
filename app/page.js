@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const projects = [
   {name: "NextLevel", description: "A metric tracking dashboard for Next.js apps", link: "https://www.nextlevel-dash.com/", image: "/assets/nllargelogo.png"},
   {name: "LunchBox", description: "A meal prep planner and tracker", link: "https://github.com/GoblinShark48/LunchBox", image: "/assets/lunchboxlogo.png"},
-  {name: "Midas", description: "Custom website design", link: "NA", image: "/assets/midasprelogo.png"},
+  {name: "Midas", description: "Custom website design business", link: "NA", image: "/assets/midasprelogo.png"},
 ];
 
 export default function Home() {
