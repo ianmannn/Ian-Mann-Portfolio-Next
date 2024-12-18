@@ -3,9 +3,24 @@
 import { useEffect, useState } from 'react';
 
 const projects = [
-  {name: "NextLevel", description: "A metric tracking dashboard for Next.js apps", link: "https://www.nextlevel-dash.com/", image: "/assets/nllargelogo.png"},
-  {name: "LunchBox", description: "A meal prep planner and tracker", link: "https://github.com/GoblinShark48/LunchBox", image: "/assets/lunchboxlogo.png"},
-  {name: "Midas", description: "Custom website design business", link: "NA", image: "/assets/midasprelogo.png"},
+  {
+    name: 'NextLevel',
+    description: 'A metric tracking dashboard for Next.js apps',
+    link: 'https://www.nextlevel-dash.com/',
+    image: '/assets/nllargelogo.png',
+  },
+  {
+    name: 'LunchBox',
+    description: 'A meal prep planner and tracker',
+    link: 'https://github.com/GoblinShark48/LunchBox',
+    image: '/assets/lunchboxlogo.png',
+  },
+  {
+    name: 'Midas',
+    description: 'Custom website design business',
+    link: 'NA',
+    image: '/assets/midasprelogo.png',
+  },
 ];
 
 export default function Home() {
@@ -135,7 +150,7 @@ export default function Home() {
                 <a href="#projects">Projects</a>
               </li>
               <li>
-                <a href="#chatbot">Chat</a>
+                <a href="#chatbot">Chatbot</a>
               </li>
               <li>
                 <a
@@ -169,12 +184,14 @@ export default function Home() {
           </nav>
         </header>
         <main>
-        <section className="hero container">
+          <section className="hero container">
             <div className="hero-left">
               <div>
                 {/* Typing effect */}
                 <h1>
-                <span className={`typing ${typingFinished ? 'finished' : ''}`}>
+                  <span
+                    className={`typing ${typingFinished ? 'finished' : ''}`}
+                  >
                     <small>Hello I'm </small> Ian Mann
                   </span>
                 </h1>
@@ -184,7 +201,8 @@ export default function Home() {
                   A passionate full-stack developer with a knack for visualizing
                   and creating interactive websites and applications. I thrive
                   in dynamic environments where innovation and creativity are
-                  key. Additionally I am always looking to grow my developer knowledge and aim to learn as much as possible about 
+                  key. Additionally I am always looking to grow my developer
+                  knowledge and aim to learn as much as possible about
                   technologies such as machine learning and neural networks.
                 </p>
                 <div className="call-to-action">
@@ -205,9 +223,16 @@ export default function Home() {
                 </div>
                 <div className="social-links">
                   <a href="https://github.com/ianmannn" target="_blank">
-                    <img src="/assets/githubwhite.png" alt="GitHub" width="48px" />
+                    <img
+                      src="/assets/githubwhite.png"
+                      alt="GitHub"
+                      width="48px"
+                    />
                   </a>
-                  <a href="https://www.linkedin.com/in/iancmann99/" target="_blank">
+                  <a
+                    href="https://www.linkedin.com/in/iancmann99/"
+                    target="_blank"
+                  >
                     <img
                       src="/assets/linkedinwhite.png"
                       alt="LinkedIn"
@@ -275,7 +300,7 @@ export default function Home() {
               Skills
             </h2>
             <div className="about-holder">
-            <div className="about-left">
+              <div className="about-left">
                 <canvas id="tagcanvas" width="400" height="400">
                   Your browser does not support the canvas element.
                 </canvas>
@@ -377,7 +402,11 @@ export default function Home() {
             <div className="project-holder">
               {projects.map((project, index) => (
                 <div key={index} className="project">
-                  <img className="product-image" src={project.image} alt={project.name} />
+                  <img
+                    className="product-image"
+                    src={project.image}
+                    alt={project.name}
+                  />
                   <h3>{project.name}</h3>
                   <p className="proj-desc">{project.description}</p>
                   <a href={project.link} target="_blank" className="button">
